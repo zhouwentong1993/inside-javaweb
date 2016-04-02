@@ -6,4 +6,8 @@
     <select id="queryUserByUserName" resultType="com.puhui.vo.User">
         SELECT * FROM `user` WHERE username = #{username}
     </select>
+
+    <select id="queryUserByUserName1" resultType="user" parameterType="com.puhui.vo.User">
+        SELECT * FROM `user` WHERE username = #{username}
+    </select>
 </mapper>

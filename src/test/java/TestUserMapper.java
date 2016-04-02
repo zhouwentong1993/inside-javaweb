@@ -17,8 +17,20 @@ public class TestUserMapper {
 
     @Test
     public void test1() {
-        String username = "test1";
-        User user = userMapper.queryUserByUserName(username);
+        User user1 = new User();
+        user1.setUsername("user2");
+        String username = "user1";
+        User user = userMapper.queryUserByUserName(username,user1);
+        System.out.println(user.getUsername());
+        System.out.println("");
+    }
+    @Test
+    public void test2() {
+        User user1 = new User();
+        user1.setUsername("user1");
+        User user2 = new User();
+        user1.setUsername("user2");
+        User user = userMapper.queryUserByUserName1(user1,user2);
         System.out.println(user.getUsername());
         System.out.println("");
     }
