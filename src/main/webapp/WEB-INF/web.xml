@@ -11,14 +11,14 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-    <servlet>
-        <servlet-name>demoServlet</servlet-name>
-        <servlet-class>com.puhui.servlet.DemoServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>demoServlet</servlet-name>
-        <url-pattern>/servlets/*</url-pattern>
-    </servlet-mapping>
+    <!--<servlet>-->
+        <!--<servlet-name>demoServlet</servlet-name>-->
+        <!--<servlet-class>com.puhui.servlet.DemoServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>demoServlet</servlet-name>-->
+        <!--<url-pattern>/servlets/*</url-pattern>-->
+    <!--</servlet-mapping>-->
 
 
     <!-- 防止Spring内存溢出监听器 -->
