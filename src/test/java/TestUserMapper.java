@@ -1,3 +1,4 @@
+import com.puhui.mapper.MovieMapper;
 import com.puhui.mapper.UserMapper;
 import com.puhui.vo.User;
 import org.junit.Test;

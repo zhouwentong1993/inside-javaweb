@@ -159,6 +159,13 @@
             <artifactId>hibernate-jpa-2.0-api</artifactId>
             <version>1.0.0.Final</version>
         </dependency>
+
+        <!--jsoup 做爬虫-->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.8.3</version>
+        </dependency>
     </dependencies>
 
     <!--配置 maven 使用 jdk 1.8 进行编译-->

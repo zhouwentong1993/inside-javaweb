@@ -4,5 +4,6 @@
     <!-- 暂时不需要其他配置-->
     <typeAliases>
         <package name="com.puhui.vo"/>
+        <package name="com.puhui.jsoup.vo"/>
     </typeAliases>
 </configuration>
