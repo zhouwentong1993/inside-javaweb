@@ -21,7 +21,6 @@ public class CommonPassword {
             Random random = new Random();
             //第一个元素
             int first = random.nextInt(9) + 1;
-            String result = first + "";
             StringBuilder stringBuilder = new StringBuilder(first + "");
             for (int i = 0; i < 5; i++) {
 //                result += random.nextInt(10);
