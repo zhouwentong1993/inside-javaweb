@@ -47,7 +47,7 @@ public class TestPassword {
 
     @Test
     public void testChangePassword() throws IOException{
-        String url = "http://localhost:8080/password/changePassword?mobile=18893795070&password=123456";
+        String url = "http://localhost:8080/password/changePassword?mobile=18893795070&password=zhou123456";
         HttpUtils.sendGet(url);
     }
 }
