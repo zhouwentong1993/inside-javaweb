@@ -36,7 +36,7 @@ public class HttpUtils {
             System.out.println("返回报文为：" + stringBuilder);
             System.out.println("================================");
         } catch (Exception e) {
-            System.out.println(e);
+            System.err.println(e.toString());
         }
     }
 
