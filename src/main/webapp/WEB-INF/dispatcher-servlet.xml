@@ -4,21 +4,12 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
     <!-- 默认的注解映射的支持 -->
-    <bean class = "org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-        <property name="messageConverters">
-            <array>
-                <bean class = "org.springframework.http.converter.StringHttpMessageConverter">
-                    <property name="supportedMediaTypes" value = "text/plain;charset=UTF-8" />
-                </bean>
-            </array>
-        </property>
-    </bean>
     <mvc:annotation-driven>
-        <mvc:message-converters register-defaults="true">
-            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
-                <property name="supportedMediaTypes" value = "text/plain;charset=UTF-8" />
-            </bean>
-        </mvc:message-converters>
+        <!--<mvc:message-converters register-defaults="true">-->
+            <!--<bean class="org.springframework.http.converter.StringHttpMessageConverter">-->
+                <!--<property name="supportedMediaTypes" value = "text/plain;charset=UTF-8" />-->
+            <!--</bean>-->
+        <!--</mvc:message-converters>-->
     </mvc:annotation-driven>
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
     <context:component-scan base-package="com.puhui.web.controller" />
