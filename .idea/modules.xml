@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/inside-javaweb.iml" filepath="$PROJECT_DIR$/inside-javaweb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/insidejavaweb/insidejavaweb.iml" filepath="$PROJECT_DIR$/insidejavaweb/insidejavaweb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restful/restful.iml" filepath="$PROJECT_DIR$/restful/restful.iml" />
     </modules>
   </component>
 </project>
