@@ -1,4 +1,4 @@
-package main.java.com.puhui.lambda;
+package com.puhui.lambda;
 
 import com.puhui.lambda.vo.Person;
 

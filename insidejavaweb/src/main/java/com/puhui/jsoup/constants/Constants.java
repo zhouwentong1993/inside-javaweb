@@ -1,4 +1,4 @@
-package main.java.com.puhui.jsoup.constants;
+package com.puhui.jsoup.constants;
 
 /**
  * Created by wentong on 2016/4/4.

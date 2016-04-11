@@ -1,4 +1,4 @@
-package main.java.com.puhui.common;
+package com.puhui.common;
 
 import com.puhui.jsoup.constants.Constants;
 import com.puhui.jsoup.vo.DouBanVo;

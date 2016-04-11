@@ -1,4 +1,4 @@
-package main.java.com.puhui.mapper;
+package com.puhui.mapper;
 
 import com.puhui.jsoup.vo.DouBanVo;
 

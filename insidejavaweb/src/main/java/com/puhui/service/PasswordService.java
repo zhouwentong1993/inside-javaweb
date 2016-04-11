@@ -1,4 +1,4 @@
-package main.java.com.puhui.service;
+package com.puhui.service;
 
 import com.puhui.password.vo.PasswordVo;
 import net.sf.json.JSONObject;

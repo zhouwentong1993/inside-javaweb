@@ -1,4 +1,4 @@
-package main.java.com.puhui.constant;
+package com.puhui.constant;
 
 /**
  * Created by wentong on 2016/4/9.

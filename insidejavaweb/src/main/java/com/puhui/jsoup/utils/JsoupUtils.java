@@ -1,4 +1,4 @@
-package main.java.com.puhui.jsoup.utils;
+package com.puhui.jsoup.utils;
 
 import com.puhui.jsoup.constants.Constants;
 import org.jsoup.Connection;

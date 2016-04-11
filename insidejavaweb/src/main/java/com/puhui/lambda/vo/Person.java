@@ -1,4 +1,4 @@
-package main.java.com.puhui.lambda.vo;
+package com.puhui.lambda.vo;
 
 import java.time.LocalDate;
 

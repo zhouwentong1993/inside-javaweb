@@ -1,4 +1,4 @@
-package main.java.com.puhui.web.controller;
+package com.puhui.web.controller;
 
 import com.puhui.password.CommonPassword;
 import com.puhui.password.vo.PasswordVo;

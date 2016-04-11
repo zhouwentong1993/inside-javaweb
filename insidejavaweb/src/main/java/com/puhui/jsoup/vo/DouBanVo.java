@@ -1,4 +1,4 @@
-package main.java.com.puhui.jsoup.vo;
+package com.puhui.jsoup.vo;
 
 import java.util.Date;
 

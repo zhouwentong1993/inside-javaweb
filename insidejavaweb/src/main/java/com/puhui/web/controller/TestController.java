@@ -1,4 +1,4 @@
-package main.java.com.puhui.web.controller;
+package com.puhui.web.controller;
 
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;

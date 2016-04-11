@@ -1,4 +1,4 @@
-package main.java.com.puhui.io.demo;
+package com.puhui.io.demo;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;

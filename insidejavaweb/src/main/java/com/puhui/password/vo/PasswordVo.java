@@ -1,4 +1,4 @@
-package main.java.com.puhui.password.vo;
+package com.puhui.password.vo;
 
 /**
  * Created by wentong on 2016/4/8.

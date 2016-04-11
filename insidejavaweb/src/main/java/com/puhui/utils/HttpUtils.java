@@ -1,4 +1,4 @@
-package main.java.com.puhui.utils;
+package com.puhui.utils;
 
 import java.io.*;
 import java.net.HttpURLConnection;

@@ -1,4 +1,4 @@
-package main.java.com.puhui.vo;
+package com.puhui.vo;
 
 import java.util.Date;
 

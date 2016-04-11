@@ -1,4 +1,4 @@
-package main.java.com.puhui.jsoup;
+package com.puhui.jsoup;
 
 import com.puhui.jsoup.utils.JsoupUtils;
 

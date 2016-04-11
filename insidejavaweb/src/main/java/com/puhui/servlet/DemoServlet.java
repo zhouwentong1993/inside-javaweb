@@ -1,4 +1,4 @@
-package main.java.com.puhui.servlet;
+package com.puhui.servlet;
 
 /**
  * Created by wentong on 2016/3/17.

@@ -1,4 +1,4 @@
-package main.java.com.puhui.password;
+package com.puhui.password;
 
 import org.apache.commons.codec.digest.DigestUtils;
 

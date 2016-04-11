@@ -1,4 +1,4 @@
-package main.java.com.puhui.service.impl;
+package com.puhui.service.impl;
 
 import com.puhui.jsoup.vo.DouBanVo;
 import com.puhui.mapper.MovieMapper;

@@ -1,4 +1,4 @@
-package main.java.com.puhui.mapper;
+package com.puhui.mapper;
 
 import com.puhui.vo.User;
 import org.apache.ibatis.annotations.Param;
