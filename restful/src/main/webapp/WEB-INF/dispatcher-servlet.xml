@@ -12,7 +12,9 @@
         <!--</mvc:message-converters>-->
     </mvc:annotation-driven>
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
-    <context:component-scan base-package="com.puhui.web.controller" />
+    <context:component-scan base-package="com.puhui.demo.web.controller" />
+    //所有swagger目录的访问，直接访问location指定的目录
+    <mvc:resources mapping="/swagger/**" location="/WEB-INF/swagger/"/>
 
     <!-- 定义跳转的文件的前后缀 ，视图模式配置 -->
     <bean
@@ -33,37 +35,37 @@
         <property name="maxInMemorySize" value="40960" />
     </bean>
 
-    <bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
-        <property name="supportedMediaTypes">
-            <list>
-                <value>application/json;charset=UTF-8</value>
-            </list>
-        </property>
-        <property name="objectMapper">
-            <bean class="org.codehaus.jackson.map.ObjectMapper">
-                <property name="dateFormat">
-                    <bean class="java.text.SimpleDateFormat">
-                        <constructor-arg index="0" type="java.lang.String" value="yyyy-MM-dd HH:mm:ss"/>
-                    </bean>
-                </property>
-            </bean>
-        </property>
-    </bean>
-    <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter"/>
-    <bean id="requestMappingHandlerAdapter" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-        <property name="messageConverters">
-            <list>
-                <ref bean="mappingJacksonHttpMessageConverter"/>
-                <ref bean="stringHttpMessageConverter"/>
-            </list>
-        </property>
-    </bean>
-    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-        <property name="messageConverters">
-            <list>
-                <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
-            </list>
-        </property>
-    </bean>
+    <!--<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">-->
+        <!--<property name="supportedMediaTypes">-->
+            <!--<list>-->
+                <!--<value>application/json;charset=UTF-8</value>-->
+            <!--</list>-->
+        <!--</property>-->
+        <!--<property name="objectMapper">-->
+            <!--<bean class="org.codehaus.jackson.map.ObjectMapper">-->
+                <!--<property name="dateFormat">-->
+                    <!--<bean class="java.text.SimpleDateFormat">-->
+                        <!--<constructor-arg index="0" type="java.lang.String" value="yyyy-MM-dd HH:mm:ss"/>-->
+                    <!--</bean>-->
+                <!--</property>-->
+            <!--</bean>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter"/>-->
+    <!--<bean id="requestMappingHandlerAdapter" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">-->
+        <!--<property name="messageConverters">-->
+            <!--<list>-->
+                <!--<ref bean="mappingJacksonHttpMessageConverter"/>-->
+                <!--<ref bean="stringHttpMessageConverter"/>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">-->
+        <!--<property name="messageConverters">-->
+            <!--<list>-->
+                <!--<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
 
 </beans>
