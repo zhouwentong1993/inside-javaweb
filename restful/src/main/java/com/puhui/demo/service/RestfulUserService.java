@@ -7,4 +7,6 @@ import com.puhui.demo.vo.RestfulUser;
  */
 public interface RestfulUserService {
     void insertUser(RestfulUser user);
+
+    RestfulUser getUserById(Long id);
 }

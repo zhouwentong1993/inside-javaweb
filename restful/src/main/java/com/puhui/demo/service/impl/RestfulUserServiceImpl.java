@@ -18,4 +18,9 @@ public class RestfulUserServiceImpl implements RestfulUserService {
     public void insertUser(RestfulUser user) {
         restfulUserMapper.insertUser(user);
     }
+
+    @Override
+    public RestfulUser getUserById(Long id) {
+        return restfulUserMapper.getUserById(id);
+    }
 }
