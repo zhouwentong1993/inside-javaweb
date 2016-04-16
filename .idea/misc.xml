@@ -5,6 +5,7 @@
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/insidejavaweb" />
+    <file type="web" url="file://$PROJECT_DIR$/restful" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

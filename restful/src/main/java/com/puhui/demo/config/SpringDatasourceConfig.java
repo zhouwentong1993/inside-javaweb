@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
@@ -17,19 +16,10 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 //@AutoConfigureAfter(DisConfConfig.class)
-public class SpringDatasourceConfig implements TransactionManagementConfigurer {
+public class SpringDatasourceConfig {
 
     @Autowired
     MybatisConfigProperties mybatisConfigProperties;
-
-//    @Autowired
-//    ApplicationConfigProperties applicationConfigProperties;
-
-
-    @Bean
-    public PlatformTransactionManager annotationDrivenTransactionManager() {
-        return new DataSourceTransactionManager(dataSource());
-    }
 
     @Bean
     // 用于指定默认DataSource
@@ -69,4 +59,5 @@ public class SpringDatasourceConfig implements TransactionManagementConfigurer {
             throw new RuntimeException(e);
         }
     }
+
 }

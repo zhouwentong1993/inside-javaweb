@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope("singleton")
-@ConfigurationProperties(prefix = "mybatis", locations = {"classpath:mybatis.properties"})
+@ConfigurationProperties(prefix = "mybatis", locations = {"classpath*:mybatis.properties"})
 public class MybatisConfigProperties {
     private String mapperLocations;
     private String typeAliasPackage;
