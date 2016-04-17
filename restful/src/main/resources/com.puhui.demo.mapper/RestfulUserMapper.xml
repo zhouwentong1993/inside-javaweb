@@ -3,18 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.puhui.demo.mapper.RestfulUserMapper">
-    <resultMap id="userMap" type="com.puhui.demo.vo.RestfulUser">
-        <id column="id" property="id"/>
-        <result property="name" column="name"/>
-        <result property="password" column="password"/>
-        <result property="address" column="address"/>
-        <result property="sex" column="sex"/>
-    </resultMap>
+    <!--<resultMap id="userMap" type="com.puhui.demo.vo.RestfulUser">-->
+        <!--<id column="id" property="id"/>-->
+        <!--<result property="name" column="name"/>-->
+        <!--<result property="password" column="password"/>-->
+        <!--<result property="address" column="address"/>-->
+        <!--<result property="sex" column="sex"/>-->
+    <!--</resultMap>-->
     <insert id="insertUser" parameterType="restfulUser">
         INSERT INTO restful_user (name, password, address, sex) VALUES (#{name}, #{password}, #{address}, #{sex});
     </insert>
 
-    <select id="getUserById" resultMap="userMap">
-        SELECT * FROM restful_user WHERE id = #{id}
+    <select id="getUserById" resultType="com.puhui.demo.vo.RestfulUser">
+        SELECT * FROM restful_user WHERE id = 1
     </select>
 </mapper>

@@ -1,23 +1,20 @@
 package com.puhui.demo.vo;
 
-import com.wordnik.swagger.annotations.ApiModel;
-import com.wordnik.swagger.annotations.ApiModelProperty;
-
 /**
  * Created by wentong on 2016/4/12.
  * Restful 用户类，增加 swagger 支持
  */
-@ApiModel(value = "User")
+//@ApiModel(value = "User")
 public class RestfulUser {
-    @ApiModelProperty(required = true)
+//    @ApiModelProperty(required = true)
     private Long id;
-    @ApiModelProperty(required = true)
+//    @ApiModelProperty(required = true)
     private String name;
-    @ApiModelProperty(required = true)
+//    @ApiModelProperty(required = true)
     private String password;
-    @ApiModelProperty(required = true)
+//    @ApiModelProperty(required = true)
     private String address;
-    @ApiModelProperty(required = true)
+//    @ApiModelProperty(required = true)
     private Integer sex;
 
 
