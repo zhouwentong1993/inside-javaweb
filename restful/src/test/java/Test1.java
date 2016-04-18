@@ -1,3 +1,4 @@
+import com.puhui.demo.Application;
 import com.puhui.demo.vo.RestfulUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;

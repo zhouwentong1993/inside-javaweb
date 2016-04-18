@@ -1,3 +1,4 @@
+import com.puhui.demo.Application;
 import com.puhui.demo.mapper.RestfulUserMapper;
 import com.puhui.demo.vo.RestfulUser;
 import org.junit.Test;
