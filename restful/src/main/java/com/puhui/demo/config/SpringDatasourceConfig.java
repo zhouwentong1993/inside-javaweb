@@ -14,7 +14,6 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-//@AutoConfigureAfter(DisConfConfig.class)
 public class SpringDatasourceConfig {
 
     @Autowired
