@@ -3,6 +3,8 @@ package com.puhui.vo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
@@ -80,9 +82,29 @@ public class Person {
 
     }
 
-    static void printPersonWithPredicate(List<Person> roster, Predicate<Person> tester){
+    static void printPersonWithPredicate(List<Person> roster, Predicate<Person> tester) {
         for (Person person : roster) {
             tester.test(person);
+        }
+    }
+
+    public static void processPerson(List<Person> personList, Predicate<Person> predicate, Consumer<Person> consumer) {
+        for (Person person : personList) {
+            if (predicate.test(person)) {
+                consumer.accept(person);
+            }
+        }
+    }
+
+    public static void processPersonWithFunction(List<Person> personList,
+                                                 Predicate<Person> predicate,
+                                                 Consumer<Person> consumer,
+                                                 Function<Person, String> function) {
+        for (Person person : personList) {
+            if (predicate.test(person)) {
+                consumer.accept(person);
+                function.apply(person);
+            }
         }
     }
 
