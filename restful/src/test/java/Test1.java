@@ -18,7 +18,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class Test1 {
     @Test
     public void test() {
-        RestfulUser user = new TestRestTemplate().getForObject("http://127.0.0.1:8888/api/v1/user/1", RestfulUser.class);
+        RestfulUser user = new TestRestTemplate().getForObject("http://127.0.0.1:9090/api/v1/user/1", RestfulUser.class);
         System.out.println(user);
     }
 }
