@@ -1,3 +1,4 @@
+import com.puhui.exception.MyException1;
 import org.junit.Test;
 
 /**
@@ -15,6 +16,15 @@ public class TestException {
             System.out.println("catch");
         } finally {
             System.out.println("finally");
+        }
+    }
+
+    @Test
+    public void test1() {
+        try {
+            throw new MyException1("exception1");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 
