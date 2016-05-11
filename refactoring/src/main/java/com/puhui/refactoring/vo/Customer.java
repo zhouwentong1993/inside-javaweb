@@ -32,11 +32,8 @@ public class Customer {
         for (Rental rental : rentals) {
 //            double thisAmount = 0;
 //            thisAmount += rental.getCharge(rental);
-            frequentREnterPoints++;
-            // 看新片有优惠
-            if (Movie.NEW_RELEASE == rental.getMovie().getPriceCode()) {
-                frequentREnterPoints++;
-            }
+            // 将计算积分方法抽取到 Rental 类中
+            frequentREnterPoints += rental.getFrequentRenterPoints();
 
             result += "\t" + rental.getMovie().getTitle() + "\t" + rental.getCharge(rental) + "\n";
             totalAmount += rental.getCharge(rental);

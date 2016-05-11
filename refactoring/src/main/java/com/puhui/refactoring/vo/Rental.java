@@ -52,4 +52,22 @@ public class Rental {
 
         return result;
     }
+
+    // 这样不优雅，因为这个方法不是返回 1，就是返回 2
+//    public int getFrequentRenterPoints() {
+//        int result = 0;
+//        result++;
+//        // 看新片加积分
+//        if (Movie.NEW_RELEASE == getMovie().getPriceCode()) {
+//            result++;
+//        }
+//        return result;
+//    }
+
+    public int getFrequentRenterPoints() {
+        if (Movie.NEW_RELEASE == getMovie().getPriceCode()) {
+            return 2;
+        }
+        return 1;
+    }
 }
