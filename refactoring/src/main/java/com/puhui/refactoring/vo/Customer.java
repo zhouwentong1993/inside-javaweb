@@ -23,21 +23,23 @@ public class Customer {
         return name;
     }
 
+    // 将临时变量替换为查询，因为临时变量容易被跟丢。
+    // 现在将 thisAmount 替换为查询，虽然这样丢失了一部分性能，但是不容易犯错。
     public String statement() {
         double totalAmount = 0;
         int frequentREnterPoints = 0;
         String result = "Rental Record for " + getName() + "\n";
         for (Rental rental : rentals) {
-            double thisAmount = 0;
-            thisAmount += rental.getCharge(rental);
+//            double thisAmount = 0;
+//            thisAmount += rental.getCharge(rental);
             frequentREnterPoints++;
             // 看新片有优惠
             if (Movie.NEW_RELEASE == rental.getMovie().getPriceCode()) {
                 frequentREnterPoints++;
             }
 
-            result += "\t" + rental.getMovie().getTitle() + "\t" + thisAmount + "\n";
-            totalAmount += thisAmount;
+            result += "\t" + rental.getMovie().getTitle() + "\t" + rental.getCharge(rental) + "\n";
+            totalAmount += rental.getCharge(rental);
         }
         result += "Amount owed is " + totalAmount + "\n";
         result += "You earned " + frequentREnterPoints + " frequent renter points";
