@@ -29,23 +29,7 @@ public class Customer {
         String result = "Rental Record for " + getName() + "\n";
         for (Rental rental : rentals) {
             double thisAmount = 0;
-            switch (rental.getMovie().getPriceCode()) {
-                case Movie.REGULAR: // 普通片
-                    thisAmount += 2;
-                    if (rental.getDaysRented() > 2) {
-                        thisAmount += (thisAmount - 2) * 1.5;
-                    }
-                    break;
-                case Movie.NEW_RELEASE:
-                    thisAmount += rental.getDaysRented() * 3;
-                    break;
-                case Movie.CHILDRENS:
-                    thisAmount += 1.5;
-                    if (rental.getDaysRented() > 3) {
-                        thisAmount += (rental.getDaysRented() - 3) * 1.5;
-                    }
-                    break;
-            }
+            thisAmount += amountFor(rental);
             frequentREnterPoints++;
             // 看新片有优惠
             if (Movie.NEW_RELEASE == rental.getMovie().getPriceCode()) {
@@ -59,4 +43,28 @@ public class Customer {
         result += "You earned " + frequentREnterPoints + " frequent renter points";
         return result;
     }
+
+    public double amountFor(Rental rental) {
+        double thisAmount = 0.0;
+        switch (rental.getMovie().getPriceCode()) {
+            case Movie.REGULAR: // 普通片
+                thisAmount += 2;
+                if (rental.getDaysRented() > 2) {
+                    thisAmount += (thisAmount - 2) * 1.5;
+                }
+                break;
+            case Movie.NEW_RELEASE:
+                thisAmount += rental.getDaysRented() * 3;
+                break;
+            case Movie.CHILDRENS:
+                thisAmount += 1.5;
+                if (rental.getDaysRented() > 3) {
+                    thisAmount += (rental.getDaysRented() - 3) * 1.5;
+                }
+                break;
+        }
+
+        return thisAmount;
+    }
+
 }
