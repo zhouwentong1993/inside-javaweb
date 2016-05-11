@@ -7,11 +7,11 @@ import java.util.Date;
  * 豆瓣电影映射的 VO 类。
  */
 public class DouBanVo {
-    private Long id;
+    private Long id; // 主键
     private String movieName; // 电影名
     private String description; // 评价
     private String score; //评分
-    private Date createTime;
+    private Date createTime; // 爬取时间
 
     public DouBanVo() {
     }
