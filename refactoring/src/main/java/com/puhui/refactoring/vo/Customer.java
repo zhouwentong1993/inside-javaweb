@@ -26,20 +26,38 @@ public class Customer {
     // 将临时变量替换为查询，因为临时变量容易被跟丢。
     // 现在将 thisAmount 替换为查询，虽然这样丢失了一部分性能，但是不容易犯错。
     public String statement() {
-        double totalAmount = 0;
-        int frequentREnterPoints = 0;
+//        double totalAmount = 0;
+//        int frequentRenterPoints = 0;
         String result = "Rental Record for " + getName() + "\n";
         for (Rental rental : rentals) {
 //            double thisAmount = 0;
 //            thisAmount += rental.getCharge(rental);
             // 将计算积分方法抽取到 Rental 类中
-            frequentREnterPoints += rental.getFrequentRenterPoints();
+//            frequentRenterPoints += rental.getFrequentRenterPoints();
 
             result += "\t" + rental.getMovie().getTitle() + "\t" + rental.getCharge(rental) + "\n";
-            totalAmount += rental.getCharge(rental);
+//            totalAmount += rental.getCharge(rental);
         }
-        result += "Amount owed is " + totalAmount + "\n";
-        result += "You earned " + frequentREnterPoints + " frequent renter points";
+        result += "Amount owed is " + getTotalCharge() + "\n";
+        result += "You earned " + getTotalFrequentRenterPoints() + " frequent renter points";
+        return result;
+    }
+
+    // replace temp with query，不惜牺牲效率。
+    private double getTotalCharge() {
+        double result = 0;
+        for (Rental rental : rentals) {
+            result += rental.getCharge(rental);
+        }
+        return result;
+    }
+
+    // replace temp with query，不惜牺牲效率。
+    private double getTotalFrequentRenterPoints() {
+        double result = 0;
+        for (Rental rental : rentals) {
+            result += rental.getFrequentRenterPoints();
+        }
         return result;
     }
 
