@@ -5,7 +5,7 @@ package com.puhui.refactoring.vo;
  * 影片实体类
  */
 public class Movie {
-    public static final int CHILDRENS = 2; // 儿童片
+    public static final int CHILDREN = 2; // 儿童片
     public static final int REGULAR = 0; // 普通片
     public static final int NEW_RELEASE = 1; // 新片
 

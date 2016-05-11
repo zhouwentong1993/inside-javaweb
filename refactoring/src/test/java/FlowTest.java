@@ -21,11 +21,11 @@ public class FlowTest {
         Customer customer5 = new Customer("第一个顾客");
 
         Movie movie1 = new Movie("普通片", Movie.REGULAR);
-        Movie movie2 = new Movie("儿童片", Movie.CHILDRENS);
+        Movie movie2 = new Movie("儿童片", Movie.CHILDREN);
         Movie movie3 = new Movie("新片1", Movie.NEW_RELEASE);
         Movie movie4 = new Movie("新片2", Movie.NEW_RELEASE);
         Movie movie5 = new Movie("普通片1", Movie.REGULAR);
-        Movie movie6 = new Movie("儿童片1", Movie.CHILDRENS);
+        Movie movie6 = new Movie("儿童片1", Movie.CHILDREN);
         Movie movie7 = new Movie("新片3", Movie.NEW_RELEASE);
         Movie movie8 = new Movie("新片4", Movie.NEW_RELEASE);
 

@@ -29,7 +29,7 @@ public class Customer {
         String result = "Rental Record for " + getName() + "\n";
         for (Rental rental : rentals) {
             double thisAmount = 0;
-            thisAmount += amountFor(rental);
+            thisAmount += rental.getCharge(rental);
             frequentREnterPoints++;
             // 看新片有优惠
             if (Movie.NEW_RELEASE == rental.getMovie().getPriceCode()) {
@@ -44,27 +44,31 @@ public class Customer {
         return result;
     }
 
-    public double amountFor(Rental rental) {
-        double thisAmount = 0.0;
-        switch (rental.getMovie().getPriceCode()) {
-            case Movie.REGULAR: // 普通片
-                thisAmount += 2;
-                if (rental.getDaysRented() > 2) {
-                    thisAmount += (thisAmount - 2) * 1.5;
-                }
-                break;
-            case Movie.NEW_RELEASE:
-                thisAmount += rental.getDaysRented() * 3;
-                break;
-            case Movie.CHILDRENS:
-                thisAmount += 1.5;
-                if (rental.getDaysRented() > 3) {
-                    thisAmount += (rental.getDaysRented() - 3) * 1.5;
-                }
-                break;
-        }
 
-        return thisAmount;
-    }
+    // 第一步，将 switch 语句抽取出去
+    // 第二步，将命名规范
+    // 第三步，因为这个方法跟 Customer 这个类没有任何关系，只是跟 Rental 这个类有关，所以移走。
+//    public double amountFor(Rental rental) {
+//        double result = 0.0;
+//        switch (rental.getMovie().getPriceCode()) {
+//            case Movie.REGULAR: // 普通片
+//                result += 2;
+//                if (rental.getDaysRented() > 2) {
+//                    result += (result - 2) * 1.5;
+//                }
+//                break;
+//            case Movie.NEW_RELEASE:
+//                result += rental.getDaysRented() * 3;
+//                break;
+//            case Movie.CHILDREN:
+//                result += 1.5;
+//                if (rental.getDaysRented() > 3) {
+//                    result += (rental.getDaysRented() - 3) * 1.5;
+//                }
+//                break;
+//        }
+//
+//        return result;
+//    }
 
 }
