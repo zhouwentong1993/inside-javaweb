@@ -66,10 +66,8 @@ public class Rental {
 //        return result;
 //    }
 
+    //用同样的手法，将 getFrequentRenterPoints() 抽取出去。
     public int getFrequentRenterPoints() {
-        if (Movie.NEW_RELEASE == getMovie().getPriceCode()) {
-            return 2;
-        }
-        return 1;
+       return movie.getFrequentRenterPoints();
     }
 }

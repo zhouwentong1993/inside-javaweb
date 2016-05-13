@@ -56,4 +56,11 @@ public class Movie {
 
         return result;
     }
+
+    public int getFrequentRenterPoints() {
+        if (Movie.NEW_RELEASE == priceCode) {
+            return 2;
+        }
+        return 1;
+    }
 }
