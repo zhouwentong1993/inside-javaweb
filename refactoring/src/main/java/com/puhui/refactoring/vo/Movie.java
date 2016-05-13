@@ -57,8 +57,8 @@ public class Movie {
         return result;
     }
 
-    public int getFrequentRenterPoints() {
-        if (Movie.NEW_RELEASE == priceCode) {
+    public int getFrequentRenterPoints(int daysRented) {
+        if (Movie.NEW_RELEASE == priceCode && daysRented > 1) {
             return 2;
         }
         return 1;

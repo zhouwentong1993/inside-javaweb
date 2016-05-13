@@ -68,6 +68,6 @@ public class Rental {
 
     //用同样的手法，将 getFrequentRenterPoints() 抽取出去。
     public int getFrequentRenterPoints() {
-       return movie.getFrequentRenterPoints();
+       return  movie.getFrequentRenterPoints(daysRented);
     }
 }
