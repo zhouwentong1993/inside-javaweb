@@ -30,25 +30,27 @@ public class Rental {
         this.daysRented = daysRented;
     }
 
-    public double getCharge(Rental rental) {
-        double result = 0.0;
-        switch (rental.getMovie().getPriceCode()) {
-            case Movie.REGULAR: // 普通片
-                result += 2;
-                if (rental.getDaysRented() > 2) {
-                    result += (result - 2) * 1.5;
-                }
-                break;
-            case Movie.NEW_RELEASE:
-                result += rental.getDaysRented() * 3;
-                break;
-            case Movie.CHILDREN:
-                result += 1.5;
-                if (rental.getDaysRented() > 3) {
-                    result += (rental.getDaysRented() - 3) * 1.5;
-                }
-                break;
-        }
+    //考虑到这个方法是跟电影有关系的，所以需要移到电影实体类底下。
+    public double getCharge() {
+        double result;
+//        switch (rental.getMovie().getPriceCode()) {
+//            case Movie.REGULAR: // 普通片
+//                result += 2;
+//                if (rental.getDaysRented() > 2) {
+//                    result += (result - 2) * 1.5;
+//                }
+//                break;
+//            case Movie.NEW_RELEASE:
+//                result += rental.getDaysRented() * 3;
+//                break;
+//            case Movie.CHILDREN:
+//                result += 1.5;
+//                if (rental.getDaysRented() > 3) {
+//                    result += (rental.getDaysRented() - 3) * 1.5;
+//                }
+//                break;
+//        }
+        result = movie.getCharge(daysRented);
 
         return result;
     }

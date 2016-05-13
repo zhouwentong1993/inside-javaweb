@@ -32,4 +32,28 @@ public class Movie {
     public void setPriceCode(int priceCode) {
         this.priceCode = priceCode;
     }
+
+    // 将该方法放置到 Movie 实体类中，考虑到拓展性，只传递出租日期。片子的类型交给 Movie 类自己维护。
+    public double getCharge(int daysRented) {
+        double result = 0.0;
+        switch (priceCode) {
+            case Movie.REGULAR: // 普通片
+                result += 2;
+                if (daysRented > 2) {
+                    result += (result - 2) * 1.5;
+                }
+                break;
+            case Movie.NEW_RELEASE:
+                result += daysRented * 3;
+                break;
+            case Movie.CHILDREN:
+                result += 1.5;
+                if (daysRented > 3) {
+                    result += (daysRented - 3) * 1.5;
+                }
+                break;
+        }
+
+        return result;
+    }
 }

@@ -35,7 +35,7 @@ public class Customer {
             // 将计算积分方法抽取到 Rental 类中
 //            frequentRenterPoints += rental.getFrequentRenterPoints();
 
-            result += "\t" + rental.getMovie().getTitle() + "\t" + rental.getCharge(rental) + "\n";
+            result += "\t" + rental.getMovie().getTitle() + "\t" + rental.getCharge() + "\n";
 //            totalAmount += rental.getCharge(rental);
         }
         result += "Amount owed is " + getTotalCharge() + "\n";
@@ -47,7 +47,7 @@ public class Customer {
     private double getTotalCharge() {
         double result = 0;
         for (Rental rental : rentals) {
-            result += rental.getCharge(rental);
+            result += rental.getCharge();
         }
         return result;
     }
