@@ -32,4 +32,15 @@ public abstract class Price {
 //
 //        return result;
 //    }
+
+    // 这个方法写的时候要考虑了，因为这个方法只是跟 NEW_RELEASE 这种类型的影片有关
+    // 所以不需要将其声明成抽象的，应该给他声明一个默认行为，就是返回 1
+    // 如果是 NEW_RELEASE 的话，就走的是实现类（NewReleasePrice）的这个方法
+    // 很好的使用了多态的概念。
+    public int getFrequentRenterPoints(int daysRented) {
+//        if (Movie.NEW_RELEASE == getPriceCode() && daysRented > 1) {
+//            return 2;
+//        }
+        return 1;
+    }
 }

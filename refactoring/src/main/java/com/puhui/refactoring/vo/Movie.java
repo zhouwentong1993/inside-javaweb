@@ -74,10 +74,12 @@ public class Movie {
         return price.getCharge(daysRented);
     }
 
+    // 将 getFrequentRenterPoints() 方法转移到 Price 类里面去
     public int getFrequentRenterPoints(int daysRented) {
-        if (Movie.NEW_RELEASE == priceCode && daysRented > 1) {
-            return 2;
-        }
-        return 1;
+//        if (Movie.NEW_RELEASE == priceCode && daysRented > 1) {
+//            return 2;
+//        }
+//        return 1;
+        return price.getFrequentRenterPoints(daysRented);
     }
 }
