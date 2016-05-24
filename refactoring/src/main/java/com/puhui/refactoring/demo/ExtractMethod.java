@@ -49,7 +49,7 @@ public class ExtractMethod {
     }
 
     // step 3 在本例中的 outstanding 只是被初始化成一个明确地初始值，所以可以在新函数中对其进行初始化
-    // 这里直接将 result 声明成了 0.0。
+    // 这里直接将 result 声明成了 0.0。如果有初始值，那么需要将初始值作为参数传递进来。
     private double getOutstanding() {
         double result = 0.0;
         for (Order order : orders) {
