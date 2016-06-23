@@ -38,8 +38,16 @@
         <processorPath useClasspath="true" />
         <module name="refactoring" />
       </profile>
+      <profile default="false" name="Annotation profile for compilers" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="compilers" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="compilers" target="1.8" />
       <module name="insidejavaweb" target="1.8" />
       <module name="puhui-parent" target="1.8" />
       <module name="refactoring" target="1.8" />

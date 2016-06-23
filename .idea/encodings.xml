@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/compilers" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/insidejavaweb" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/refactoring" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/restful" charset="UTF-8" />
