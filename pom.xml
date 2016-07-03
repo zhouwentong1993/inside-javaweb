@@ -9,6 +9,7 @@
         <module>restful</module>
         <module>insidejavaweb</module>
         <module>refactoring</module>
+        <module>compilers</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
