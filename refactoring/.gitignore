@@ -10,6 +10,7 @@
 *.ear
 *.iml
 /target
+/.idea/findbugs-idea.xml
 .idea
 libraries
 vcs.xml
