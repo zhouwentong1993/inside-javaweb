@@ -6,11 +6,11 @@ package com.puhui.generic;
  */
 public class LinkedStack<T> {
 
-    private static class Node<U> {
-        U item; // 值
-        Node<U> next; // 下一个节点
+    private class Node {
+        T item; // 值
+        Node next; // 下一个节点
 
-        public Node(U item, Node<U> next) {
+        public Node(T item, Node next) {
             this.item = item;
             this.next = next;
         }
@@ -25,10 +25,10 @@ public class LinkedStack<T> {
         }
     }
 
-    private Node<T> top = new Node<>();
+    private Node top = new Node();
 
     private void push(T item) {
-        top = new Node<>(item, top);
+        top = new Node(item, top);
     }
 
     private T pop() {
