@@ -45,9 +45,14 @@
         <property name="configLocation" value="classpath:spring-mybatis.xml" />
         <property name="mapperLocations" value="classpath:com.puhui.mapper/**/*.xml" />
     </bean>
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <!--tk mybatis 集成 spring-->
+    <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.puhui.mapper" />
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+        <property name="properties">
+            <value>
+                mappers=tk.mybatis.mapper.common.Mapper
+            </value>
+        </property>
     </bean>
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
