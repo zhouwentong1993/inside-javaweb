@@ -3,6 +3,7 @@ package com.puhui.vo;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
 
 /**
@@ -18,6 +19,7 @@ public class User {
     private String sex;
     private Date birthday;
     private Address address;
+    @Transient
     private String noUse;
 
     public String getNoUse() {
