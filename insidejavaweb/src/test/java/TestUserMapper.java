@@ -23,9 +23,10 @@ public class TestUserMapper {
     public void test1() {
         User user1 = new User();
         user1.setUsername("user2");
-        String username = "'张' or 1=1";
+        String username = "张";
         List<User> userList = userMapper.queryUserByUserName(username, user1);
         userList.forEach(System.out::println);
+
         Optional.ofNullable(userList).orElseThrow(() -> new RuntimeException("有瑕疵"));
 //        System.out.println(userList.getUsername());
     }

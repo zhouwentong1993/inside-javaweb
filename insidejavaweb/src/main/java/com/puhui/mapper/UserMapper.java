@@ -12,6 +12,7 @@ import java.util.List;
 @Repository
 public interface UserMapper {
     List<User> queryUserByUserName(@Param("username") String username, User user);
+
     User queryUserByUserName1(User user1, User user2);
 
 

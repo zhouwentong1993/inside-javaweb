@@ -11,7 +11,7 @@ public class User {
     private String username;
     private String sex;
     private Date birthday;
-    private String address;
+    private Address address;
 
     public int getId() {
         return id;
@@ -45,11 +45,11 @@ public class User {
         this.birthday = birthday;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
