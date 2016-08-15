@@ -1,17 +1,32 @@
 package com.puhui.vo;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
  * Created by zhouwentong1@gmail.com on 2016/2/9.
  * User domain
  */
+@Table(name = "user")
 public class User {
+    @Id
+    @GeneratedValue(generator = "JDBC")
     private int id;
     private String username;
     private String sex;
     private Date birthday;
     private Address address;
+    private String noUse;
+
+    public String getNoUse() {
+        return noUse;
+    }
+
+    public void setNoUse(String noUse) {
+        this.noUse = noUse;
+    }
 
     public int getId() {
         return id;
