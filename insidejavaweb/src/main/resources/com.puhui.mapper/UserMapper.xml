@@ -19,10 +19,17 @@
     </resultMap>
 
     <select id="queryUserByUserName" resultMap="baseMap">
-        select * from user,address where username like concat('%', #{username}, '%') and user.address = address.id
+        SELECT *
+        FROM user, address
+        WHERE username LIKE concat('%', #{username}, '%') AND user.address = address.id
+        <if test="id != null">
+            user.id = #{id}
+        </if>
     </select>
 
     <select id="queryUserByUserName1" resultType="user" parameterType="com.puhui.vo.User">
-        SELECT * FROM `user` WHERE username = #{username}
+        SELECT *
+        FROM `user`
+        WHERE username = #{username}
     </select>
 </mapper>

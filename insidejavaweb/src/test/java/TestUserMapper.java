@@ -27,7 +27,7 @@ public class TestUserMapper {
         List<User> userList = userMapper.queryUserByUserName(username, user1);
         userList.forEach(System.out::println);
 
-        Optional.ofNullable(userList).orElseThrow(() -> new RuntimeException("有瑕疵"));
+        Optional.of(userList).orElseThrow(() -> new RuntimeException("有瑕疵"));
 //        System.out.println(userList.getUsername());
     }
 
