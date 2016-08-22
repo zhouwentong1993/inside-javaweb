@@ -13,16 +13,17 @@
     $(document).ready(function () {
         $('#tt').tabs({
             onSelect: function (title) {
-                $('#ff').form({
-                    url:'test/testPost',
-                    onSubmit:function(){
-                        alert(111)
-                        return $(this).form('validate');
-                    },
-                    success:function(data){
-                        $.messager.alert('Info', data, 'info');
-                    }
-                });
+//                $('#ff').form({
+//                    url:'test/testPost',
+//                    onSubmit:function(){
+//                        alert(111)
+//                        return $(this).form('validate');
+//                    },
+//                    success:function(data){
+//                        $.messager.alert('Info', data, 'info');
+//                    }
+//                });
+                alert(12)
             }
         });
     });
