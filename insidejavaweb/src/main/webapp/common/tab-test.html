@@ -12,23 +12,19 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
-        var valid = $('#ff1').form('validate');
+//        var valid = $('#ff1').form('validate');
         $('#tt').tabs({
             border: false,
             // 这个 title 是跳转的目的地的 title
             onSelect: function (title, index) {
-//                alert(title)
-//                var $this = $(this);
-////                if ($this.title == "Title4") {
                 var tab = $('#tt').tabs('getSelected');
-//                alert(tab[0].id)
-//                var valid = $('#ff').form('validate');
+                var valid = $('#ff1').form('validate');
                 if (!valid) {
-//                    alert("您还有未填写的项目");
-                    $('#tt').tabs('selected', "Title1");
-//                    currentTab.selected = true;
+                    alert("还没写完呢，急啥")
+                    debugger;
+                    var tab1 = $('#tt').tabs('getTab', 'Title1');
+                    tab1.attr("selected", true);
                 }
-//                }
             }
         });
         $('#coo').combobox({
