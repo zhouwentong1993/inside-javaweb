@@ -11,23 +11,56 @@
 </head>
 <script type="text/javascript">
     $(document).ready(function () {
+
+        var valid = $('#ff1').form('validate');
         $('#tt').tabs({
             border: false,
             // 这个 title 是跳转的目的地的 title
             onSelect: function (title, index) {
-                alert(title)
-                var $this = $(this);
-//                if ($this.title == "Title4") {
-                        var tab = $('#tt').tabs('getSelected');
-                        alert(tab[0].id)
-                        var valid = $('#ff').form('validate');
-                        if (!valid) {
-                            alert("您还有未填写的项目");
-                            $('#tt').tabs('selected', "Title4");
-                        }
+//                alert(title)
+//                var $this = $(this);
+////                if ($this.title == "Title4") {
+                var tab = $('#tt').tabs('getSelected');
+//                alert(tab[0].id)
+//                var valid = $('#ff').form('validate');
+                if (!valid) {
+//                    alert("您还有未填写的项目");
+                    $('#tt').tabs('selected', "Title1");
+//                    currentTab.selected = true;
+                }
 //                }
             }
         });
+        $('#coo').combobox({
+            onChange:function(record){
+                var peo = $('#coo').combobox('getValue');
+                if(peo =='aa') {
+                    $('#tt').tabs('disableTab',3);
+                } else {
+                    $('#tt').tabs('enableTab',3);
+                }
+            }
+        });
+//        $('#select1id').combobox({
+//            url:"getClose.do",
+//            editable:false,
+//            panelWidth:130,
+//            width:130,
+//            onSelect:function(record){
+//                var peo = $('#closeBugChoose').combobox('getValue');
+//
+//                if(peo=="1"){
+//                    $('#select2id').combobox({
+//                        disabled:true
+//                    });
+//                }
+//                else{
+//                    $('#select2id').combobox({
+//                        disabled:false
+//                    });
+//                }
+//            }
+//        });
     });
 </script>
 <body>
@@ -39,11 +72,73 @@
 <div class="easyui-tabs" data-options="tools:'#tab-tools'" style="width:700px;height:250px">
     <div title="Sub Tabs" style="padding:10px;" id="main">
         <div class="easyui-tabs" data-options="fit:true,plain:true" id="tt">
-            <div title="Title1" style="padding:10px;" id="first">Content 1</div>
-            <div title="Title2" style="padding:10px;" id="second">Content 2</div>
-            <div title="Title3" style="padding:10px;" id="third">Content 3</div>
+            <div title="Title1" style="padding:10px;" id="first">
+                <form id="ff1" method="post">
+                    <div>
+                        <select id="coo" class="easyui-combobox" name="dept" style="width:200px;">
+                            <option value="aa">aitem1</option>
+                            <option value="bb">bitem2</option>
+                            <option value="cc">bitem3</option>
+                            <option value="dd">ditem4</option>
+                            <option value="ee">eitem5</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input class="easyui-validatebox" type="text" name="email" required="true" validType="email">
+                    </div>
+                    <div>
+                        <label for="subject">Subject:</label>
+                        <input class="easyui-validatebox" type="text" name="subject" required="true">
+                    </div>
+                    <div>
+                        <label for="message">Message:</label>
+                        &lt;textarea name="message" style="height:60px;"&gt;&lt;/textarea&gt;
+                    </div>
+                </form>
+            </div>
+            <div title="Title2" style="padding:10px;" id="second">
+                <form id="ff2" method="post">
+                    <div>
+                        <label for="name">Name:</label>
+                        <input class="easyui-validatebox" type="text" name="name" required="true">
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input class="easyui-validatebox" type="text" name="email" required="true" validType="email">
+                    </div>
+                    <div>
+                        <label for="subject">Subject:</label>
+                        <input class="easyui-validatebox" type="text" name="subject" required="true">
+                    </div>
+                    <div>
+                        <label for="message">Message:</label>
+                        &lt;textarea name="message" style="height:60px;"&gt;&lt;/textarea&gt;
+                    </div>
+                </form>
+            </div>
+            <div title="Title3" style="padding:10px;" id="third">
+                <form id="ff3" method="post">
+                    <div>
+                        <label for="name">Name:</label>
+                        <input class="easyui-validatebox" type="text" name="name" required="true">
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input class="easyui-validatebox" type="text" name="email" required="true" validType="email">
+                    </div>
+                    <div>
+                        <label for="subject">Subject:</label>
+                        <input class="easyui-validatebox" type="text" name="subject" required="true">
+                    </div>
+                    <div>
+                        <label for="message">Message:</label>
+                        &lt;textarea name="message" style="height:60px;"&gt;&lt;/textarea&gt;
+                    </div>
+                </form>
+            </div>
             <div title="Title4" style="padding:10px;" id="forth">
-                <form id="ff" method="post">
+                <form id="ff4" method="post">
                     <div>
                         <label for="name">Name:</label>
                         <input class="easyui-validatebox" type="text" name="name" required="true">
