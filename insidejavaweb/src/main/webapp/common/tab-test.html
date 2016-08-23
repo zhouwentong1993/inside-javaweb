@@ -21,9 +21,11 @@
                 var valid = $('#ff1').form('validate');
                 if (!valid) {
                     alert("还没写完呢，急啥")
-                    debugger;
                     var tab1 = $('#tt').tabs('getTab', 'Title1');
                     tab1.attr("selected", true);
+//                    $('#tt').tabs('selected', tab1);
+                    // 通过下标去获取
+                    $('#tt').tabs("select", 0);
                 }
             }
         });
