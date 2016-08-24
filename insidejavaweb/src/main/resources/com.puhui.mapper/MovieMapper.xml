@@ -13,7 +13,7 @@
         <result property="createTime" column="create_time" javaType="java.util.Date" jdbcType="DATE"/>
         <result property="score" column="score"/>
     </resultMap>
-    <insert id="insertMovie" parameterType="douBanVo">
+    <insert id="insertMovie" parameterType="com.puhui.jsoup.vo.DouBanVo">
         INSERT INTO mybatis.jsoup (movie_name, description, create_time,score) VALUES (#{movieName}, #{description}, now(),#{score});
     </insert>
 </mapper>

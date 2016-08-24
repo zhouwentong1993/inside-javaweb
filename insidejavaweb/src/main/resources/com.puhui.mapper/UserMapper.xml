@@ -3,11 +3,33 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.puhui.mapper.UserMapper">
-    <select id="queryUserByUserName" resultType="com.puhui.vo.User">
-        SELECT * FROM `user` WHERE username = #{username}
+    <resultMap id="baseMap" type="com.puhui.vo.User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="sex" column="sex"/>
+        <result property="birthday" column="birthday"/>
+        <association property="address" javaType="com.puhui.vo.Address" resultMap="address"/>
+
+    </resultMap>
+
+    <resultMap id="address" type="com.puhui.vo.Address">
+        <id property="id" column="id"/>
+        <result property="province" column="province"/>
+        <result property="city" column="city"/>
+    </resultMap>
+
+    <select id="queryUserByUserName" resultMap="baseMap">
+        SELECT *
+        FROM user, address
+        WHERE username LIKE concat('%', #{username}, '%') AND user.address = address.id
+        <if test="id != null">
+            user.id = #{id}
+        </if>
     </select>
 
     <select id="queryUserByUserName1" resultType="user" parameterType="com.puhui.vo.User">
-        SELECT * FROM `user` WHERE username = #{username}
+        SELECT *
+        FROM `user`
+        WHERE username = #{username}
     </select>
 </mapper>
