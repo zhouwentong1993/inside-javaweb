@@ -53,7 +53,7 @@
                 var valid = $('#ff1').form('validate');
                 var tab1 = $('#tt').tabs('getTab', myIndex);
 //                if (index != 0 && !valid ) {
-                if (index != myIndex && !valid) {
+                if ((index == myIndex) && (!valid)) {
                     alert("还没写完呢，急啥");
                     tab1.attr("selected", true);
 //                    $('#tt').tabs('selected', tab1);
