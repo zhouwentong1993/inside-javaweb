@@ -11,24 +11,8 @@
 </head>
 <script type="text/javascript">
     $(document).ready(function () {
-
 //        var valid = $('#ff1').form('validate');
-        $('#tt').tabs({
-            border: false,
-            // 这个 title 是跳转的目的地的 title
-            onSelect: function (title, index) {
-                var tab = $('#tt').tabs('getSelected');
-                var valid = $('#ff1').form('validate');
-                if (!valid) {
-                    alert("还没写完呢，急啥")
-                    var tab1 = $('#tt').tabs('getTab', 'Title1');
-                    tab1.attr("selected", true);
-//                    $('#tt').tabs('selected', tab1);
-                    // 通过下标去获取
-                    $('#tt').tabs("select", 0);
-                }
-            }
-        });
+        demo(0);
         $('#coo').combobox({
             onChange:function(record){
                 var peo = $('#coo').combobox('getValue');
@@ -60,6 +44,32 @@
 //            }
 //        });
     });
+    function demo(myIndex) {
+        $('#tt').tabs({
+            border: false,
+            // 这个 title 是跳转的目的地的 title
+            onSelect: function (title, index) {
+                var tab = $('#tt').tabs('getSelected');
+                var valid = $('#ff1').form('validate');
+                var tab1 = $('#tt').tabs('getTab', myIndex);
+//                if (index != 0 && !valid ) {
+                if (index != myIndex && !valid) {
+                    alert("还没写完呢，急啥");
+                    tab1.attr("selected", true);
+//                    $('#tt').tabs('selected', tab1);
+                    // 通过下标去获取
+                    $('#tt').tabs("select", myIndex);
+                } else {
+                    $('#tt').tabs('update', {
+                        tab: tab1,
+                        options: {
+                            title: "<span class='tt-inner'><img src='images/scanner.png'/><br>Scanner</span>"
+                        }
+                    });
+                }
+            }
+        });
+    }
 </script>
 <body>
 <h2>Nested Tabs</h2>
