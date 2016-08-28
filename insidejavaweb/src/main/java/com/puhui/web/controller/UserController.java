@@ -19,6 +19,8 @@ public class UserController {
 
     @RequestMapping("getUser")
     public Object getUser(User user, UserInfo userInfo) {
+        System.out.println("改了一个类");
+        System.out.println("改了一个类");
         System.out.println(user);
         System.out.println(userInfo);
         userMapper.saveUserInfo(userInfo);
