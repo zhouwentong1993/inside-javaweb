@@ -1,7 +1,9 @@
 package com.puhui.web.controller;
 
+import com.puhui.mapper.UserMapper;
 import com.puhui.vo.User;
 import com.puhui.vo.UserInfo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -12,11 +14,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("user")
 public class UserController {
+    @Autowired
+    private UserMapper userMapper;
+
     @RequestMapping("getUser")
     public Object getUser(User user, UserInfo userInfo) {
         System.out.println(user);
         System.out.println(userInfo);
+        userMapper.saveUserInfo(userInfo);
         user.setUserInfoId(userInfo.getId());
+        userMapper.saveUser(user);
         System.out.println(user);
         System.out.println(userInfo);
         return null;
