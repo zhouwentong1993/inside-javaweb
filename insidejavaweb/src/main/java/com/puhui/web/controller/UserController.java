@@ -9,9 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
 
 /**
  * Created by wentong on 2016/8/28.
@@ -38,8 +35,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "getValue",method = RequestMethod.POST)
-    @ResponseBody
-    public Object getValue(@RequestBody List<Value> valueList) {
+    public Object getValue(@RequestBody Value[] valueList) {
         System.out.println(valueList);
         return null;
     }

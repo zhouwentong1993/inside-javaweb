@@ -43,11 +43,17 @@
         });
         $(document).ready(function () {
             $('#bt').bind('click', function () {
+                var valueList = [];
+                valueList.push({id: "1", requestUrl: "李四", port: "123",timeStamp:12222});
+                valueList.push({id: "2", requestUrl: "张三", port: "332",timeStamp:12222});
                 debugger;
                 $('#ff').form('submit', {
                     url: "/user/getValue",
                     type: 'POST',
-                    data: $('#ff').form('getData',true),
+//                    contentType : 'application/json;charset=utf-8', //设置请求头信息
+//                    dataType:"json",
+                    data:JSON.stringify(valueList),
+//                    data: $('#ff').form('getData',true),
 //                    onSubmit: function () {
 //                        var isValid = $(this).form('validate');
 //                        if (!isValid) {
