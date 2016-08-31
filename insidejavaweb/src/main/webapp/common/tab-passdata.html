@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Custom ValidateBox Tooltip - jQuery EasyUI Demo</title>
+    <link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="demo.css">
+    <script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="jquery.easyui.min.js"></script>
+    <script type="text/javascript">
+        /**
+         * From扩展
+         * getData 获取数据接口
+         *
+         * @param {Object} jq
+         * @param {Object} params 设置为true的话，会把string型"true"和"false"字符串值转化为boolean型。
+         */
+        $.extend($.fn.form.methods, {
+            getData: function(jq, params){
+                var formArray = jq.serializeArray();
+                var oRet = {};
+                for (var i in formArray) {
+                    if (typeof(oRet[formArray[i].name]) == 'undefined') {
+                        if (params) {
+                            oRet[formArray[i].name] = (formArray[i].value == "true" || formArray[i].value == "false") ? formArray[i].value == "true" : formArray[i].value;
+                        }
+                        else {
+                            oRet[formArray[i].name] = formArray[i].value;
+                        }
+                    }
+                    else {
+                        if (params) {
+                            oRet[formArray[i].name] = (formArray[i].value == "true" || formArray[i].value == "false") ? formArray[i].value == "true" : formArray[i].value;
+                        }
+                        else {
+                            oRet[formArray[i].name] += "," + formArray[i].value;
+                        }
+                    }
+                }
+                return oRet;
+            }
+        });
+        $(document).ready(function () {
+            $('#bt').bind('click', function () {
+                debugger;
+                $('#ff').form('submit', {
+                    url: "/user/getValue",
+                    type: 'POST',
+                    data: $('#ff').form('getData',true),
+//                    onSubmit: function () {
+//                        var isValid = $(this).form('validate');
+//                        if (!isValid) {
+//                            $.messager.progress('close');	// 如果表单是无效的则隐藏进度条
+//                        }
+//                        return isValid;	// 返回false终止表单提交
+//                    },
+                    success: function () {
+                        alert("success");
+                    }
+                });
+            });
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+<h2>传递数据使用的传递的是 Value 这个值 </h2>
+
+<p>Click tab strip to swap tab panel content.</p>
+
+<div style="margin:20px 0 10px 0;"></div>
+<div id="tt" class="easyui-tabs" style="width:700px;height:250px">
+    <div title="Help" data-options="iconCls:'icon-help',closable:true" style="padding:10px">
+        <div style="padding:3px 2px;border-bottom:1px solid #ccc">Form Validation</div>
+        <form id="ff" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input class="easyui-validatebox" type="text" name="valueList[0].requestUrl">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input class="easyui-validatebox" type="text" name="valueList[0].port">
+            </div>
+            <div>
+                <label for="subject">Subject:</label>
+                <input class="easyui-validatebox" type="text" name="valueList[0].timeStamp">
+            </div>
+
+            <div>
+                <label for="name">Name1:</label>
+                <input class="easyui-validatebox" type="text" name="valueList[1].requestUrl">
+            </div>
+            <div>
+                <label for="email">Email1:</label>
+                <input class="easyui-validatebox" type="text" name="valueList[1].port">
+            </div>
+            <div>
+                <label for="subject">Subject1:</label>
+                <input class="easyui-validatebox" type="text" name="valueList[1].timeStamp">
+            </div>
+            <div>
+                <a id="bt" class="easyui-linkbutton" data-options="iconCls:'icon-search'" type="submit">保存</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
