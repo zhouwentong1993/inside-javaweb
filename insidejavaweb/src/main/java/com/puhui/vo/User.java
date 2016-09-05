@@ -19,8 +19,30 @@ public class User {
     private String sex;
     private Date birthday;
     private Address address;
+    private int userInfoId;
     @Transient
     private String noUse;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", sex='" + sex + '\'' +
+                ", birthday=" + birthday +
+                ", address=" + address +
+                ", userInfoId=" + userInfoId +
+                ", noUse='" + noUse + '\'' +
+                '}';
+    }
+
+    public int getUserInfoId() {
+        return userInfoId;
+    }
+
+    public void setUserInfoId(int userInfoId) {
+        this.userInfoId = userInfoId;
+    }
 
     public String getNoUse() {
         return noUse;
@@ -70,14 +92,4 @@ public class User {
         this.address = address;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", sex='" + sex + '\'' +
-                ", birthday=" + birthday +
-                ", address='" + address + '\'' +
-                '}';
-    }
 }

@@ -1,6 +1,7 @@
 package com.puhui.mapper;
 
 import com.puhui.vo.User;
+import com.puhui.vo.UserInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
@@ -16,5 +17,7 @@ public interface UserMapper extends Mapper<User>{
 
     User queryUserByUserName1(User user1, User user2);
 
+    void saveUserInfo(UserInfo userInfo);
 
+    void saveUser(User user);
 }

@@ -32,4 +32,12 @@
         FROM `user`
         WHERE username = #{username}
     </select>
+
+    <insert id="saveUserInfo">
+        INSERT INTO user_info(userInfoDesc) VALUES (#{userInfoDesc})
+    </insert>
+
+    <insert id="saveUser">
+        INSERT INTO user(username, birthday, sex, address,userInfoId) VALUES (#{username},#{birthday},#{sex},#{address.id},#{userInfoId})
+    </insert>
 </mapper>

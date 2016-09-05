@@ -12,7 +12,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
 //        var valid = $('#ff1').form('validate');
-        demo(0);
+        demo($('#tt'),0);
         $('#coo').combobox({
             onChange:function(record){
                 var peo = $('#coo').combobox('getValue');
@@ -44,8 +44,9 @@
 //            }
 //        });
     });
-    function demo(myIndex) {
-        $('#tt').tabs({
+    function demo(temp,myIndex) {
+        debugger;
+        temp.tabs({
             border: false,
             // 这个 title 是跳转的目的地的 title
             onSelect: function (title, index) {

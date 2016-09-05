@@ -17,6 +17,21 @@
     <!-- 分解配置 jdbc.properties -->
     <context:property-placeholder location="classpath:jdbc.properties" />
 
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="jsonHttpMessageConverter" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="jsonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>application/json;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
     <!-- 数据源c3p0 -->
     <!--<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
         <!--<property name="driverClass" value="${jdbc.driverClassName}" />-->
