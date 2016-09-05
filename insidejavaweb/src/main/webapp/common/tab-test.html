@@ -80,7 +80,9 @@
 
         function changeTab(sourceIndex,index) {
             var beforeTab = $('#tt').tabs('getTab',sourceIndex);
+//            todo 通过改 title 来实现改图标的功能。
             beforeTab.panel('setTitle', '123');
+            $('#first').title = '21231';
             debugger;
             var validate = beforeTab.form('validate');
             if (!validate && index !== sourceIndex) {
