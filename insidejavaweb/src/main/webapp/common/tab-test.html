@@ -27,6 +27,8 @@
         $('#tt').tabs({
             border: false,
             onSelect: function (title, index) {
+                $('#tt').tab('setTitle','123213');
+                setTitle($('#tt'), {'which':0,'title':'newnewnew'});
                 changeTab(tabIndex,index);
             }
         });
@@ -44,8 +46,13 @@
             debugger;
             if (!param || !(param.which || $.isNumeric(param.which)) || !param.title) { return; }
             var t = $(target), tab = t.tabs("getTab", param.which);
-            tab.panel({"title", param.title});
+            tab.panel("setTitle", param.title);
         }
+
+        function getSelectedTitle(target) {
+            var t = $(target), tabOpts = t.tabs("getSelectedOption"), title = tabOpts.title;
+            return title;
+        };
 //        var _setTitle = $.fn.panel.methods.setTitle;
 //        function setTitle(target, title) {
 //            debugger;
