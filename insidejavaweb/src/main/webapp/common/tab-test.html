@@ -30,59 +30,44 @@
                 changeTab(tabIndex,index);
             }
         });
-//        $('#select1id').combobox({
-//            url:"getClose.do",
-//            editable:false,
-//            panelWidth:130,
-//            width:130,
-//            onSelect:function(record){
-//                var peo = $('#closeBugChoose').combobox('getValue');
-//
-//                if(peo=="1"){
-//                    $('#select2id').combobox({
-//                        disabled:true
-//                    });
-//                }
-//                else{
-//                    $('#select2id').combobox({
-//                        disabled:false
-//                    });
-//                }
-//            }
-//        });
         function demo(temp,myIndex) {
             temp.tabs({
                 border: false,
                 // 这个 title 是跳转的目的地的 title
                 onSelect: function (title, index) {
                     changeTab(tabIndex,index)
-//                var tab = $('#tt').tabs('getSelected');
-//                var valid = $('#ff1').form('validate');
-//                var tab1 = $('#tt').tabs('getTab', myIndex);
-////                if (index != 0 && !valid ) {
-//                if ((index == myIndex) && (!valid)) {
-//                    alert("还没写完呢，急啥");
-//                    tab1.attr("selected", true);
-////                    $('#tt').tabs('selected', tab1);
-//                    // 通过下标去获取
-//                    $('#tt').tabs("select", myIndex);
-//                } else {
-//                    $('#tt').tabs('update', {
-//                        tab: tab1,
-//                        options: {
-//                            title: "<span class='tt-inner'><img src='images/scanner.png'/><br>Scanner</span>"
-//                        }
-//                    });
-//                }
                 }
             });
         }
 
+        function setTitle(target, param) {
+            debugger;
+            if (!param || !(param.which || $.isNumeric(param.which)) || !param.title) { return; }
+            var t = $(target), tab = t.tabs("getTab", param.which);
+            tab.panel({"title", param.title});
+        }
+//        var _setTitle = $.fn.panel.methods.setTitle;
+//        function setTitle(target, title) {
+//            debugger;
+//            var t = $(target);
+//            if (!inTabs(target)) { return _setTitle.call(t, t, title); }
+//            if (!title) { return; }
+//            var opts = t.panel("options"), header = t.panel("header");
+//            opts.title = title;
+//            header.find(">a.tabs-inner>span.tabs-title").text(title);
+//        };
+//
+//        var inTabs = function (target) {
+//            var t = $(target), panel = t.panel("panel"), panels = panel.parent(), container = panels.parent();
+//            return panels.hasClass("tabs-panels") && container.hasClass("tabs-container");
+//        };
+
         function changeTab(sourceIndex,index) {
             var beforeTab = $('#tt').tabs('getTab',sourceIndex);
+            setTitle($('#tt'), {'which':0,'title':'newnewnew'});
 //            todo 通过改 title 来实现改图标的功能。
-            beforeTab.panel('setTitle', '123');
-            $('#first').title = '21231';
+//            beforeTab.panel('setTitle', '123');
+//            $('#first').title = '21231';
             debugger;
             var validate = beforeTab.form('validate');
             if (!validate && index !== sourceIndex) {
