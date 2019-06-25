@@ -6,8 +6,8 @@ package com.puhui.java8;
  */
 public class NewFeature {
     public static void main(String[] args) {
-        Integer integer = 10;
-        Integer integer1 = 10;
+        Integer integer = 1110;
+        Integer integer1 = 1110;
         System.out.println(integer1 == integer);
 
     }
