@@ -15,7 +15,7 @@
         <mybatis.version>3.5.6</mybatis.version>
         <mybatisspring.version>1.1.1</mybatisspring.version>
         <java.version>1.8</java.version>
-        <springboot.version>2.5.12</springboot.version>
+        <springboot.version>2.7.18</springboot.version>
         <!--配置启动脚本主类-->
         <main-class>com.puhui.demo.Application</main-class>
     </properties>
